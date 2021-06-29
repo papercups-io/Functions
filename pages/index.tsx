@@ -35,7 +35,7 @@ export default class extends Component {
           <title>
             Functions by Papercups | Build bots with code
           </title>
-          <link rel="icon" href="/functions-logo.png" />
+          <link rel="icon" href="logo.png" />
           <meta
             name="description"
             content="Papercups functions let you build chatbots and automation with code"
@@ -47,7 +47,7 @@ export default class extends Component {
             <Box flex={1}>
               <Link href="/">
                 <a>
-                  <img src="functions-logo.png" style={{ height: 100 }} />
+                  <img src="logo.png" style={{ height: 100 }} />
                 </a>
               </Link>
             </Box>
