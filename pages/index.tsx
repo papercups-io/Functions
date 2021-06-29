@@ -35,7 +35,7 @@ export default class extends Component {
           <title>
             Functions by Papercups | Build bots with code
           </title>
-          <link rel="icon" href="/storytime-logo.svg" />
+          <link rel="icon" href="/functions-logo.png" />
           <meta
             name="description"
             content="Papercups functions let you build chatbots and automation with code"
@@ -47,7 +47,7 @@ export default class extends Component {
             <Box flex={1}>
               <Link href="/">
                 <a>
-                  <img src="storytime-logo.svg" style={{ height: 40 }} />
+                  <img src="functions-logo.png" style={{ height: 100 }} />
                 </a>
               </Link>
             </Box>
@@ -188,8 +188,8 @@ export default class extends Component {
               <Box flex={1} mx={[0, 4]} my={[4, 0]}>
                 <Title level={3}>One click deployment</Title>
                 <Paragraph>
-                    Deploy and get feedback from the chatbot instantly with our one click deploy. 
-                    Get feedback immediately, no more setting up an additional services
+                  Deploy and get feedback from the chatbot instantly with our one click deploy.
+                  Get feedback immediately, no more setting up an additional services
                 </Paragraph>
               </Box>
 
