@@ -167,7 +167,7 @@ export default class extends Component {
                       height: '100%',
                       minHeight: 320,
                     }}
-                    src="online-collab.svg"
+                    src="chat.svg"
                   />
                 </Flex>
               </Box>
@@ -230,7 +230,7 @@ export default class extends Component {
                       height: '100%',
                       minHeight: 320,
                     }}
-                    src="online-message.svg"
+                    src="developer.svg"
                   />
                 </Flex>
               </Box>
