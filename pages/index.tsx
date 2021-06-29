@@ -18,13 +18,15 @@ import {
   Title,
   Text,
 } from '../components/common';
-import EmbeddableChat from '../components/EmbeddableChat';
 
-const CodeEditor = dynamic(import('../components/CodeEditor'), {
-  ssr: false,
-});
+const Demo = dynamic(import('../components/Demo'), {ssr: false});
 
-export default class extends Component {
+type Props = {};
+type State = {demo: 'chat' | 'email'};
+
+export default class extends Component<Props, State> {
+  state: State = {demo: 'chat'};
+
   componentDidMount() {
     const {NEXT_PUBLIC_GA_TRACKING_ID} = process.env;
 
@@ -145,29 +147,8 @@ export default class extends Component {
               </Box>
             </Box>
 
-            <Box mb={6}>
-              <Flex alignItems="center" justifyContent="center">
-                <Flex sx={{width: '100%', height: 560}}>
-                  <Box sx={{flex: 1.2, position: 'relative'}}>
-                    <CodeEditor />
-                  </Box>
-
-                  <Flex pl={2} sx={{flex: 1, flexDirection: 'column'}}>
-                    <EmbeddableChat
-                      sx={{flex: 1, height: '100%', width: '100%'}}
-                      config={{
-                        accountId: 'eb504736-0f20-4978-98ff-1a82ae60b266',
-                        primaryColor: '#1890ff',
-                        greeting:
-                          'Send a message below to see the code in action!',
-                        newMessagePlaceholder: 'Send a test message...',
-                        baseUrl:
-                          'https://alex-papercups-staging.herokuapp.com/',
-                      }}
-                    />
-                  </Flex>
-                </Flex>
-              </Flex>
+            <Box mb={6} sx={{height: 616}}>
+              <Demo />
             </Box>
 
             <Flex mb={[5, 6]} mx={[0, -4]} flexDirection={['column', 'row']}>

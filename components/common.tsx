@@ -6,6 +6,7 @@ import Menu from 'antd/lib/menu';
 import Modal from 'antd/lib/modal';
 import Select from 'antd/lib/select';
 import Spin from 'antd/lib/spin';
+import Switch from 'antd/lib/switch';
 import Table from 'antd/lib/table';
 import Tooltip from 'antd/lib/tooltip';
 import Typography from 'antd/lib/typography';
@@ -14,6 +15,8 @@ import {blue, green, red, gold, grey} from '@ant-design/colors';
 
 const {Title, Text, Paragraph} = Typography;
 const {Header, Content, Footer, Sider} = Layout;
+
+export const TextArea = Input.TextArea;
 
 export const colors = {
   white: '#fff',
@@ -45,6 +48,7 @@ export {
   Modal,
   Select,
   Spin,
+  Switch,
   Table,
   Tooltip,
 };
