@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { Component } from 'react';
+import {Component} from 'react';
 import ReactGA from 'react-ga';
-import { Box, Flex } from 'rebass';
-import { ChatWidget, Papercups } from '@papercups-io/chat-widget';
-import { RightCircleOutlined, GithubOutlined } from '../components/icons';
+import {Box, Flex} from 'rebass';
+import {ChatWidget, Papercups} from '@papercups-io/chat-widget';
+import {RightCircleOutlined, GithubOutlined} from '../components/icons';
 import {
   colors,
   Button,
@@ -20,7 +20,7 @@ import {
 
 export default class extends Component {
   componentDidMount() {
-    const { NEXT_PUBLIC_GA_TRACKING_ID } = process.env;
+    const {NEXT_PUBLIC_GA_TRACKING_ID} = process.env;
 
     if (NEXT_PUBLIC_GA_TRACKING_ID) {
       ReactGA.initialize(NEXT_PUBLIC_GA_TRACKING_ID);
@@ -30,11 +30,9 @@ export default class extends Component {
 
   render() {
     return (
-      <Layout style={{ background: colors.white }}>
+      <Layout style={{background: colors.white}}>
         <Head>
-          <title>
-            Functions by Papercups | Build bots with code
-          </title>
+          <title>Functions by Papercups | Build bots with code</title>
           <link rel="icon" href="logo.png" />
           <meta
             name="description"
@@ -42,19 +40,19 @@ export default class extends Component {
           ></meta>
         </Head>
 
-        <Header style={{ background: 'transparent' }}>
+        <Header style={{background: 'transparent'}}>
           <Flex>
             <Box flex={1}>
               <Link href="/">
                 <a>
-                  <img src="logo.png" style={{ height: 100 }} />
+                  <img src="logo.png" style={{height: 80}} />
                 </a>
               </Link>
             </Box>
 
             <Box>
-              <Menu style={{ borderBottom: 'none' }} mode="horizontal">
-                <Menu.Item style={{ margin: '0 1em' }} key="blog">
+              <Menu style={{borderBottom: 'none'}} mode="horizontal">
+                <Menu.Item style={{margin: '0 1em'}} key="blog">
                   <a
                     href="https://papercups.io/blog"
                     target="_blank"
@@ -63,7 +61,16 @@ export default class extends Component {
                     Blog
                   </a>
                 </Menu.Item>
-                <Menu.Item style={{ margin: '0 1em' }} key="pricing">
+                <Menu.Item style={{margin: '0 1em'}} key="docs">
+                  <a
+                    href="https://docs.papercups.io"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Docs
+                  </a>
+                </Menu.Item>
+                <Menu.Item style={{margin: '0 1em'}} key="pricing">
                   <a
                     href="https://papercups.io/pricing"
                     target="_blank"
@@ -72,7 +79,7 @@ export default class extends Component {
                     Pricing
                   </a>
                 </Menu.Item>
-                <Menu.Item style={{ margin: '0 1em' }} key="github">
+                <Menu.Item style={{margin: '0 1em'}} key="github">
                   <a
                     href="https://github.com/papercups-io/papercups"
                     target="_blank"
@@ -81,9 +88,9 @@ export default class extends Component {
                     Github
                   </a>
                 </Menu.Item>
-                <Menu.Item style={{ margin: '0 1em' }} key="Sign up">
+                <Menu.Item style={{margin: '0 1em'}} key="Sign up">
                   <a
-                    href="https://app.papercups.io/login?redirect=/functions/getting-started"
+                    href="https://app.papercups.io/functions"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -96,24 +103,24 @@ export default class extends Component {
         </Header>
 
         <Content>
-          <Box mx="auto" style={{ maxWidth: 960 }} py={5} px={4}>
+          <Box mx="auto" style={{maxWidth: 960}} py={5} px={4}>
             <Box pt={80} mx={[0, 4]} mb={5}>
-              <Box mb={5} sx={{ textAlign: 'center' }}>
-                <Title level={1}>
-                  Build chat custom bots with code.
-                </Title>
+              <Box mb={5} sx={{textAlign: 'center'}}>
+                <Title level={1}>Build custom chat bots with code.</Title>
 
-                <Paragraph>
-                  Papercups Functions is a way of building custom and powerful message automation by let you write and run javascript code directly inside the browser. No need to maintain a custom service and webhook endpoints for custom code and events.
+                <Paragraph style={{fontSize: 16}}>
+                  Papercups Functions makes it possible to build custom and
+                  powerful message automation by letting you write, run, and
+                  deploy code directly inside the browser.
                 </Paragraph>
 
                 <Flex
-                  my={3}
-                  sx={{ justifyContent: 'center', alignItems: 'center' }}
+                  my={4}
+                  sx={{justifyContent: 'center', alignItems: 'center'}}
                 >
                   <Box mr={2}>
                     <a
-                      href="https://app.papercups.io/register?redirect=/functions/getting-started"
+                      href="https://app.papercups.io/register?redirect=/functions"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -139,15 +146,7 @@ export default class extends Component {
                   height: 400,
                 }}
               >
-                <iframe
-                  src="https://www.loom.com/embed/62ab4e7a881b4b60a67134c32e6a7899"
-                  frameBorder="0"
-                  allowFullScreen
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                  }}
-                ></iframe>
+                TODO: demo!
               </Flex>
             </Box>
 
@@ -174,8 +173,9 @@ export default class extends Component {
               <Box flex={1} mx={[0, 4]} my={[4, 0]}>
                 <Title level={3}>Omni-channel automation</Title>
                 <Paragraph>
-                  Automate messages from live chat, SMS, email and slack all within one platform.
-                  You can integrate all of your customer messaging channels all in a single place.
+                  Automate messages from live chat, SMS, email, and Slack all
+                  within one platform. Integrate all of your customer messaging
+                  channels in a single place.
                 </Paragraph>
               </Box>
             </Flex>
@@ -186,10 +186,11 @@ export default class extends Component {
               flexDirection={['column-reverse', 'row']}
             >
               <Box flex={1} mx={[0, 4]} my={[4, 0]}>
-                <Title level={3}>One click deployment</Title>
+                <Title level={3}>One-click deployment</Title>
                 <Paragraph>
-                  Deploy and get feedback from the chatbot instantly with our one click deploy.
-                  Get feedback immediately, no more setting up an additional services
+                  Deploy and run your chatbot in just a few seconds with a
+                  single click. Get feedback immediately and iterate more
+                  quickly.
                 </Paragraph>
               </Box>
 
@@ -236,10 +237,12 @@ export default class extends Component {
               </Box>
 
               <Box flex={1} mx={[0, 4]} my={[4, 0]}>
-                <Title level={3}>Developer first</Title>
+                <Title level={3}>Developer-first</Title>
                 <Paragraph>
-                  By using code you aren't limited to Papercup's interface.
-                  You can build custom bots and algorithms that you would not be able to other wise
+                  With code, you have the ability to build custom bots and
+                  workflow automation that wouldn't be possible otherwise. Pipe
+                  messages between different channels, send notifications, and
+                  pull in custom metadata with ease.
                 </Paragraph>
               </Box>
             </Flex>
@@ -296,7 +299,7 @@ export default class extends Component {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="slack-v1.svg" style={{ height: 144 }} />
+                  <img src="slack-v1.svg" style={{height: 144}} />
                 </a>
               </Flex>
               <Flex flex={1} mx={3} my={[3, 0]} justifyContent="center">
@@ -305,7 +308,7 @@ export default class extends Component {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="github-v1.svg" style={{ height: 144 }} />
+                  <img src="github-v1.svg" style={{height: 144}} />
                 </a>
               </Flex>
               <Flex flex={1} mx={3} my={[3, 0]} justifyContent="center">
@@ -314,7 +317,7 @@ export default class extends Component {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="discord-color.svg" style={{ height: 144 }} />
+                  <img src="discord-color.svg" style={{height: 144}} />
                 </a>
               </Flex>
             </Flex>
@@ -352,9 +355,9 @@ export default class extends Component {
           </Box>
         </Content>
 
-        <Footer style={{ backgroundColor: '#001529' }}>
+        <Footer style={{backgroundColor: '#001529'}}>
           <Box p={5}>
-            <Text style={{ color: colors.white }}>
+            <Text style={{color: colors.white}}>
               Made with ❤️ in SF &amp; NYC
             </Text>
           </Box>
