@@ -58,9 +58,12 @@ const AgentMessage = ({
   message: any;
   isNextSameSender: boolean;
 }) => {
+  const isBot = message.type === 'bot';
+  const agentPhotoUrl = message.user?.profile_photo_url;
   const profilePhotoUrl =
-    message.user?.profile_photo_url ||
-    'https://avatars.slack-edge.com/2021-01-13/1619416452487_002cddd7d8aea1950018_192.png';
+    agentPhotoUrl && !isBot
+      ? agentPhotoUrl
+      : 'https://avatars.slack-edge.com/2021-01-13/1619416452487_002cddd7d8aea1950018_192.png';
   const shouldDisplayAvatar = !isNextSameSender;
 
   return (
