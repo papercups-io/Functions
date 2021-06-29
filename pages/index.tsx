@@ -1,10 +1,11 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import {Component} from 'react';
 import ReactGA from 'react-ga';
 import {Box, Flex} from 'rebass';
 import {ChatWidget, Papercups} from '@papercups-io/chat-widget';
-import {RightCircleOutlined, GithubOutlined} from '../components/icons';
+import {RightCircleOutlined} from '../components/icons';
 import {
   colors,
   Button,
@@ -17,6 +18,11 @@ import {
   Title,
   Text,
 } from '../components/common';
+import EmbeddableChat from '../components/EmbeddableChat';
+
+const CodeEditor = dynamic(import('../components/CodeEditor'), {
+  ssr: false,
+});
 
 export default class extends Component {
   componentDidMount() {
@@ -103,15 +109,17 @@ export default class extends Component {
         </Header>
 
         <Content>
-          <Box mx="auto" style={{maxWidth: 960}} py={5} px={4}>
+          <Box mx="auto" style={{maxWidth: 1080}} py={5} px={4}>
             <Box pt={80} mx={[0, 4]} mb={5}>
               <Box mb={5} sx={{textAlign: 'center'}}>
-                <Title level={1}>Build custom chat bots with code.</Title>
+                <Title level={1}>
+                  Build, run, and deploy custom chat bots with code.
+                </Title>
 
                 <Paragraph style={{fontSize: 16}}>
                   Papercups Functions makes it possible to build custom and
                   powerful message automation by letting you write, run, and
-                  deploy code directly inside the browser.
+                  deploy JavaScript code directly inside the browser.
                 </Paragraph>
 
                 <Flex
@@ -137,16 +145,28 @@ export default class extends Component {
               </Box>
             </Box>
 
-            <Box mx={[0, 4]} mb={6}>
-              <Flex
-                alignItems="center"
-                justifyContent="center"
-                style={{
-                  width: '100%',
-                  height: 400,
-                }}
-              >
-                TODO: demo!
+            <Box mb={6}>
+              <Flex alignItems="center" justifyContent="center">
+                <Flex sx={{width: '100%', height: 560}}>
+                  <Box sx={{flex: 1.2, position: 'relative'}}>
+                    <CodeEditor />
+                  </Box>
+
+                  <Flex pl={2} sx={{flex: 1, flexDirection: 'column'}}>
+                    <EmbeddableChat
+                      sx={{flex: 1, height: '100%', width: '100%'}}
+                      config={{
+                        accountId: 'eb504736-0f20-4978-98ff-1a82ae60b266',
+                        primaryColor: '#1890ff',
+                        greeting:
+                          'Send a message below to see the code in action!',
+                        newMessagePlaceholder: 'Send a test message...',
+                        baseUrl:
+                          'https://alex-papercups-staging.herokuapp.com/',
+                      }}
+                    />
+                  </Flex>
+                </Flex>
               </Flex>
             </Box>
 
